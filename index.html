@@ -25,7 +25,7 @@
           <div class="row" style="margin-top: 3em;">
             <div class="col-md-6 col-md-offset-3">
               <div class="form-group">
-                <input id="amount" type="text" class="form-control" id="volume" placeholder="Amount of codes">
+                <input id="amount" type="number" maxlength="4" class="form-control" id="volume" placeholder="Amount of codes">
               </div>
             </div>
           </div>
@@ -38,51 +38,6 @@
           </div>
           <div id="result" class="row">
             <ul>
-             <!--  <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>
-              <li>xyz12345</li>  -->
-
             </ul>
           </div>
     
@@ -115,26 +70,28 @@
 
       var codes = voucher_codes.generate({
           length: 8,
-          count: amount || 10
+          count: amount || 100
       });
 
       codes.forEach(function(c) {
         list.append($('<li>').text(c));
       });
+
+      if (codes.length == 0) {
+        result.css('border', 'none');
+      }
      
     });
   </script>
-
-
-  <!-- <script>
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-62111925-3', 'auto');
+    ga('create', 'UA-62111925-4', 'auto');
     ga('send', 'pageview');
 
-  </script> -->
+  </script>
 </body>
 </html>
