@@ -103,11 +103,11 @@
             <div class="col-md-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">8 letters or digits</h3>
+                  <h3 class="panel-title">8 safe letters or digits</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
-                    <li>X6RlzCXb</li>
+                    <li>X6RgzCXb</li>
                     <li>aPnRRTF8</li>
                     <li>AuBVwynK</li>
                     <li>jLZP5GMJ</li>
@@ -286,6 +286,7 @@
     $('#template1').on('click', function() {
       cleanUpAdvancedOptions();
       $('#length').val(8);
+      $('#charset').val("23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ");
     });
 
     $('#template2').on('click', function() {
