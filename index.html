@@ -29,7 +29,7 @@
           <h1 class="cover-heading">Random code generator</h1>
           <p class="lead">The generated codes can be used for coupons, promotional codes, gift vouchers, serial numbers and much more. If you need an end-to-end coupon campaign management and tracking, try <u><a href="http://voucherify.io/?utm_source=generator&utm_medium=landing&utm_campaign=acq">voucherify.io</a></u></p>
 
-          <div class="row" style="margin-top: 3em;">
+          <div id="form" class="row" style="margin-top: 3em;">
 
             <form class="form-horizontal">
               <div class="form-group">
@@ -56,7 +56,7 @@
                 <div class="form-group">
                   <label for="charset" class="col-sm-3 col-sm-offset-1 control-label">Character set</label>
                   <div class="col-sm-6">
-                    <textarea id=rows="3" class="form-control" placeholder="Characters that can appear in the code">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+                    <textarea id="charset" rows="3" class="form-control" placeholder="Characters that can appear in the code">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
                     <!-- <input id="charset" type="text" class="form-control" placeholder="Characters to pick from, e.g. abcdefghijklmnopqrstuvw" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"> -->
                   </div>
                 </div>
@@ -90,7 +90,14 @@
 
           </div>
 
-          <div class="row" style="margin-top: 3em;">
+          <!-- Results -->
+          <div id="result" class="row">
+            <ul>
+            </ul>
+          </div>
+
+          <!-- Examples -->
+          <div class="row" style="margin-top: 5em;">
             <h2 class="cover-heading">Code template examples</h2>
 
             <div class="col-md-4">
@@ -106,7 +113,7 @@
                     <li>bQgLkKyM</li>
                     <li>mbdGg3rW</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template1" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
@@ -124,7 +131,7 @@
                     <li>AZEBWD</li>
                     <li>RTQWPN</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template2" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
@@ -142,7 +149,7 @@
                     <li>739-JEE-895</li>
                     <li>764-VQW-495</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template3" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
@@ -160,7 +167,7 @@
                     <li>XNSS-HSJW-3NGU-8XTJ</li>
                     <li>NHLE-L6MI-4GE4-ETEV</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template4" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
@@ -178,7 +185,7 @@
                     <li>EUR-QLWSKE</li>
                     <li>EUR-CHNPDY</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template5" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
@@ -196,17 +203,11 @@
                     <li>QLWSKE-2016</li>
                     <li>CHNPDY-2016</li>
                   </ul>
-                  <a id="template" href="#" class="btn btn-default">Use this template</a>
+                  <a id="template6" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
             </div>
 
-          </div>
-
-
-          <div id="result" class="row">
-            <ul>
-            </ul>
           </div>
     
         </div>
@@ -270,6 +271,53 @@
       }
      
     });
+
+    function cleanUpAdvancedOptions() {
+      $('#charset').val("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+      $('#prefix').val("");
+      $('#postfix').val("");
+      $('#pattern').val("");
+
+      $('#advanced-options').removeClass('hidden');
+
+      $('#form').focus();
+    }
+
+    $('#template1').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#length').val(8);
+    });
+
+    $('#template2').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#length').val(6);
+      $('#charset').val("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+
+    $('#template3').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#pattern').val("###-###-###");
+      $('#charset').val("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+
+    $('#template4').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#pattern').val("####-####-####-####");
+      $('#charset').val("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+
+    $('#template5').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#prefix').val("EUR-");
+      $('#charset').val("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+
+    $('#template6').on('click', function() {
+      cleanUpAdvancedOptions();
+      $('#postfix').val("-2016");
+      $('#charset').val("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    });
+
   </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
