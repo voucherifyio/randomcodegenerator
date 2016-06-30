@@ -189,4 +189,7 @@ body {
     width: 20%;
 }
 
+.panel-body {
+  background-color: #333;
+}
 
