@@ -28,26 +28,59 @@
         <div class="inner cover">
           <h1 class="cover-heading">Random code generator</h1>
           <p class="lead">The generated codes can be used for coupons, promotional codes, gift vouchers, serial numbers and much more. If you need an end-to-end coupon campaign management and tracking, try <u><a href="http://voucherify.io/?utm_source=generator&utm_medium=landing&utm_campaign=acq">voucherify.io</a></u></p>
-          <div class="row" style="margin-top: 3em;">
-            <div class="col-md-6 col-md-offset-3">
-              <div class="form-group">
-                <input id="amount" type="number" maxlength="4" class="form-control" placeholder="Amount of codes">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-md-offset-5">
-              <p class="lead">
-                <a id="generate" href="#" class="btn btn-lg btn-default">Generate</a>
-              </p>
-            </div>
-          </div>
 
-          <a id="advanced" href="#" class="btn btn-link">Advanced</a>
-          <div id="advanced" class="row">
-            <div class="col-md-2 col-md-offset-5">
-              HIDDEN
-            </div>
+          <div class="row" style="margin-top: 3em;">
+
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="amount" class="col-sm-3 col-sm-offset-1 control-label">Amount of codes</label>
+                <div class="col-sm-6">
+                  <input id="amount" type="number" maxlength="4" class="form-control" placeholder="Number of codes to generate">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="length" class="col-sm-3 col-sm-offset-1 control-label">Single code length</label>
+                <div class="col-sm-6">
+                  <input id="length" type="number" maxlength="2" class="form-control" placeholder="Number of characters in a single code">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-3 col-sm-offset-4 control-label"><a href="#">Advanced options...</a></label>
+              </div>
+
+              <div class="form-group">
+                <label for="characterset" class="col-sm-3 col-sm-offset-1 control-label">Character set</label>
+                <div class="col-sm-6">
+                  <textarea id=rows="3" class="form-control" placeholder="Characters that can appear in the code">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</textarea>
+                  <!-- <input id="characterset" type="text" class="form-control" placeholder="Characters to pick from, e.g. abcdefghijklmnopqrstuvw" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"> -->
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="prefix" class="col-sm-3 col-sm-offset-1 control-label">Code prefix</label>
+                <div class="col-sm-6">
+                  <input id="prefix" type="text" maxlength="10" class="form-control" placeholder="Text prepended before the random code">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="postfix" class="col-sm-3 col-sm-offset-1 control-label">Code postfix</label>
+                <div class="col-sm-6">
+                  <input id="postfix" type="text" maxlength="10" class="form-control" placeholder="Text appended after the random code">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pattern" class="col-sm-3 col-sm-offset-1 control-label">Code pattern</label>
+                <div class="col-sm-6">
+                  <input id="pattern" type="text" maxlength="32" class="form-control" placeholder="Hashes (#) are replaced with random characters">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-3">
+                  <a id="generate" href="#" class="btn btn-lg btn-default btn-block">Generate</a>
+                </div>
+              </div>
+            </form>
+
           </div>
 
           <div class="row">
