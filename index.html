@@ -139,25 +139,7 @@
             <div class="col-md-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Giftcard codes</h3>
-                </div>
-                <div class="panel-body">
-                  <ul class="list-unstyled">
-                    <li>CFU-EKS-HUY</li>
-                    <li>4D3-XRI-ZQT</li>
-                    <li>LDT-UQ5-IXN</li>
-                    <li>YJW-Q40-51V</li>
-                    <li>1MN-IXE-HE9</li>
-                  </ul>
-                  <a id="template3" href="#" class="btn btn-default">Use this template</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Serial numbers</h3>
+                  <h3 class="panel-title">Giftcard / serial numbers</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
@@ -167,6 +149,24 @@
                     <li>T7SO-QI8M-JAIQ-CGV4</li>
                     <li>BL32-3KZ2-BLCZ-00FK</li>
                   </ul>
+                  <a id="template3" href="#" class="btn btn-default">Use this template</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Strong passwords</h3>
+                </div>
+                <div class="panel-body">
+                  <ul class="list-unstyled">
+                    <li>h.8QxI)Mh6D!H5,i</li>
+                    <li>CrDivh)5}-CSuMv#</li>
+                    <li>5`#F=D7:s+N1fvxc</li>
+                    <li>k`e/p/gtdg=*y(o*</li>
+                    <li>5izS]b8;-SpO0B+M</li>
+                  </ul>
                   <a id="template4" href="#" class="btn btn-default">Use this template</a>
                 </div>
               </div>
@@ -175,15 +175,15 @@
             <div class="col-md-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Codes with prefix</h3>
+                  <h3 class="panel-title">Codes with prefix / postfix</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
-                    <li>EUR-KYZTQF</li>
-                    <li>EUR-NWCAOV</li>
-                    <li>EUR-RCJORL</li>
-                    <li>EUR-XMAIDY</li>
-                    <li>EUR-VOYMSC</li>
+                    <li>EUR-KYZTQ-2016</li>
+                    <li>EUR-NWCAO-2016</li>
+                    <li>EUR-RCJOR-2016</li>
+                    <li>EUR-XMAID-2016</li>
+                    <li>EUR-VOYMS-2016</li>
                   </ul>
                   <a id="template5" href="#" class="btn btn-default">Use this template</a>
                 </div>
@@ -193,15 +193,15 @@
             <div class="col-md-4">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Codes with postfix</h3>
+                  <h3 class="panel-title">Pattern-based codes</h3>
                 </div>
                 <div class="panel-body">
                   <ul class="list-unstyled">
-                    <li>BZMTRK-2016</li>
-                    <li>RXKZNG-2016</li>
-                    <li>WQATMI-2016</li>
-                    <li>JGTVYZ-2016</li>
-                    <li>EUPRMM-2016</li>
+                    <li>FR38_SH1PP2NG_N8W</li>
+                    <li>FR44_SH7PP6NG_N9W</li>
+                    <li>FR51_SH5PP6NG_N4W</li>
+                    <li>FR18_SH9PP4NG_N3W</li>
+                    <li>FR73_SH7PP7NG_N0W</li>
                   </ul>
                   <a id="template6" href="#" class="btn btn-default">Use this template</a>
                 </div>
@@ -297,26 +297,28 @@
 
     $('#template3').on('click', function() {
       cleanUpAdvancedOptions();
-      $('#pattern').val("###-###-###");
+      $('#pattern').val("####-####-####-####");
       $('#charset').val("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     });
 
     $('#template4').on('click', function() {
       cleanUpAdvancedOptions();
-      $('#pattern').val("####-####-####-####");
-      $('#charset').val("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+      $('#length').val(16);
+      $('#charset').val("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-{}[];'|:,./<>?`~");
     });
 
     $('#template5').on('click', function() {
       cleanUpAdvancedOptions();
+      $('#length').val(5);
       $('#prefix').val("EUR-");
+      $('#postfix').val("-2016");
       $('#charset').val("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     });
 
     $('#template6').on('click', function() {
       cleanUpAdvancedOptions();
-      $('#postfix').val("-2016");
-      $('#charset').val("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+      $('#pattern').val("FR##_SH#PP#NG_N#W");
+      $('#charset').val("0123456789");
     });
 
   </script>
